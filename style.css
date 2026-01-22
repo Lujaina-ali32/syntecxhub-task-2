@@ -1,0 +1,313 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Poppins",sans-serif;
+}
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    transition:0.6s;
+
+}
+
+.app{
+    width:400px;
+     max-width:95%;
+    border-radius:25px;
+     padding:28px;
+    backdrop-filter:blur(15px);
+     box-shadow:0 20px 60px rgba(0,0,0,0.25);
+    transition:0.5s;
+     display:flex;
+     flex-direction:column;
+     align-items:center;
+     position:relative;
+
+}
+header{
+    width:100%;
+     display:flex;
+     justify-content:space-between;
+     align-items:center;
+     margin-bottom:20px;
+
+}
+header h1{
+    font-size:1.6rem;
+}
+header button{
+    padding:8px 16px;
+     border-radius:14px;
+     border:none;
+
+    cursor:pointer;
+     transition:0.3s;
+     font-weight:600;
+     background:var(--accent)
+    ; color:#fff;
+
+}
+header button:hover{transform:scale(1.1);}
+
+.input-box {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.input-box input,
+.input-box select {
+    flex: 1 1 120px; 
+    padding: 12px 14px;
+    border-radius: 14px;
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, 0.85);
+    font-size: 14px;
+    transition: all 0.3s ease;
+    min-width: 0; 
+}
+
+.input-box input:focus,
+.input-box select:focus {
+    transform: scale(1.02);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+}
+
+.input-box button {
+    flex: 0 0 60px; 
+    padding: 12px 16px;
+    border-radius: 14px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    font-weight: bold;
+    background: var(--accent);
+    color: white;
+}
+
+.input-box button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+/* MOBILE STACK */
+@media (max-width: 480px) {
+    .input-box input,
+    .input-box select,
+    .input-box button {
+        flex: 1 1 100%; 
+    }
+}
+
+ul{
+    list-style:none;
+    width:100%;
+}
+li{
+    padding:14px;
+    margin-bottom:12px;
+
+    border-radius:18px;
+     display:flex;
+     justify-content:space-between;
+     align-items:center;
+
+    transition:0.3s, transform 0.3s; cursor:pointer;
+
+    backdrop-filter:blur(8px);
+     box-shadow:0 10px 25px rgba(0,0,0,0.15);
+
+    background:var(--card);
+    opacity:0;
+     transform:translateY(-10px);
+
+    animation: fadeIn 0.4s forwards;
+}
+li:hover{
+    transform:translateY(-5px) scale(1.02); 
+    box-shadow:0 12px 28px rgba(0,0,0,0.25);
+}
+li.completed{opacity:0.6; text-decoration:line-through;}
+.actions span{
+    cursor:pointer; 
+    margin-left:10px; 
+    font-size:1.2rem; 
+    transition:0.3s;
+}
+.actions span:hover{
+    transform:scale(1.2);
+}
+.task-info strong{
+    margin-right:8px;
+}
+.tag{
+    background:rgba(0,0,0,0.05); 
+    border-radius:6px; 
+    padding:2px 6px; 
+    font-size:0.8rem; 
+    margin-left:6px;
+}
+.due{
+    margin-left:6px; font-size:0.8rem; color:gray;}
+
+.progress{
+    width:100%; 
+    height:8px; 
+    border-radius:10px; 
+    overflow:hidden; 
+    margin-bottom:16px; 
+    background:rgba(0,0,0,0.1);
+}
+#progressBar{
+    height:100%;
+     width:0%; 
+     transition:0.5s; 
+     border-radius:10px; 
+     background:var(--accent);
+    }
+
+#emptyMessage{
+    text-align:center;
+    color:gray;
+    font-style:italic;
+    margin-top:40px;
+    display:none;
+    animation: fadeIn 0.6s ease;
+}
+
+.priority-high{
+    border-left:6px solid #ef4444;
+}
+.priority-medium{
+    border-left:6px solid #f59e0b;
+}
+.priority-low{
+    border-left:6px solid #10b981;
+}
+
+body.theme-0{
+    background:linear-gradient(135deg,#ffdde1,#ee9ca7);
+    --card:#ffffff;--accent:#d63447;
+}
+body.theme-1{
+    background:linear-gradient(135deg,#d4fc79,#96e6a1);
+    --card:#ffffff;--accent:#16a34a;
+}
+body.theme-2{
+    background:linear-gradient(135deg,#141e30,#243b55);
+    --card:#1e293b;--accent:#38bdf8;
+}
+body.theme-3{
+    background:linear-gradient(135deg,#ffd194,#ffb347);
+    --card:#fff5f0;--accent:#f97316;
+}
+body.theme-4{
+    background:linear-gradient(135deg,#e0c3fc,#8ec5fc);
+    --card:#f3f0ff;--accent:#7c3aed;
+}
+body.theme-5{
+    background:linear-gradient(135deg,#ff758c,#ff7eb3);
+    --card:#ffeef2;--accent:#f43f5e;
+}
+body.theme-6{
+    background:linear-gradient(135deg,#89f7fe,#66a6ff);
+    --card:#f0f8ff;--accent:#2563eb;
+}
+body.theme-7{
+    background:linear-gradient(135deg,#fbc2eb,#a18cd1);
+    --card:#f9f5ff;--accent:#8b5cf6;
+}
+body.theme-8{
+    background:linear-gradient(135deg,#fad0c4,#ffd1ff);
+    --card:#fff0f6;--accent:#db2777;
+}
+body.theme-9{
+    background:linear-gradient(135deg,#30cfd0,#330867);
+    --card:#1a1a2e;--accent:#06b6d4;
+}
+
+@keyframes fadeIn {
+    to { opacity:1; transform:translateY(0); }
+}
+
+/* RESPONSIVE */
+@media(max-width:480px){
+    .input-box{grid-template-columns:1fr; gap:12px;}
+    #addBtn{width:100%;}
+    li{font-size:14px;}
+}
+
+#taskCount{
+    font-size:12px;
+    opacity:0.7;
+    margin-bottom:10px;
+    align-self:flex-start;
+}
+
+@media (max-width: 480px) {
+    .app {
+        width: 95%; 
+        padding: 20px; 
+    }
+
+    header h1 {
+        font-size: 1.4rem;
+    }
+
+    header button {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+
+    .input-box {
+        flex-direction: column; 
+        gap: 10px;
+    }
+
+    .input-box input,
+    .input-box select,
+    .input-box button {
+        flex: 1 1 100%; 
+        min-width: 0;
+    }
+
+    #taskList li {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .actions {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 8px;
+    }
+
+    .task-info {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        width: 100%;
+    }
+
+    .progress {
+        height: 6px;
+    }
+
+    #taskCount {
+        font-size: 11px;
+        margin-bottom: 8px;
+    }
+}
+body { font-size: 14px; }
+@media (max-width: 360px){
+    body { font-size: 13px; }
+}

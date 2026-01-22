@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aurora Planner 3.0</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+  <header>
+    <h1>TaskNova</h1>
+    
+    <button id="themeToggle">🎨 Change Theme</button>
+  </header>
+
+  <div class="input-box">
+    <input id="taskInput" placeholder="Add a new task..." />
+    <input type="date" id="dueDate" />
+    <select id="priority">
+      <option value="low">🟢 Low</option>
+      <option value="medium">🟡 Medium</option>
+      <option value="high">🔴 High</option>
+    </select>
+    <select id="tag">
+      <option>Work</option>
+      <option>Study</option>
+      <option>Personal</option>
+    </select>
+    <button id="addBtn">＋</button>
+  </div>
+
+  <div class="progress">
+    <div id="progressBar"></div>
+  </div>
+
+  <div id="taskCount"></div>
+ 
+  <ul id="taskList"></ul>
+  <div id="emptyMessage">🎉 No tasks yet, add your first task!</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="script.js"></script>
+</body>
+</html>
